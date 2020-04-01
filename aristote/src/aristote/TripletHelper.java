@@ -18,7 +18,7 @@ public class TripletHelper
 	
 	private void findTriplets()
 	{
-		System.out.println("Triplets:");
+		System.out.println("Triplets (for numbers from 1 to 19) with sum " + sum + ":");
 		for (int i = 1; i <= 19; i++)
 		{
 			for (int j = 1; j <= 19; j++)
@@ -41,11 +41,11 @@ public class TripletHelper
 
 				}
 			}
-		System.out.println("\n");
+		System.out.println();
 		}
 
 	
-	public List<Triplet> getPossibleTripletsToAdd(List<Integer> crownSequence)
+	public List<Triplet> getCompatibleTriplets(List<Integer> crownSequence)
 	{
 		int last =crownSequence.get(crownSequence.size()-1);
 		List<Triplet> possibleTriplets = triplets.stream().filter(t -> t.getA() == last).distinct().collect(Collectors.toList());
